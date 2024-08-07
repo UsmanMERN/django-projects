@@ -3,5 +3,12 @@
 {% block title %}Create Tweets{% endblock  %}
 
 {% block content %}
-<h1 class="text-center mt-4">Welcome to Tweeter project with django</h1>
+<h1 class="text-center mt-4">Are you sure you wants to delete this tweet..?</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <button class="btn btn-danger">Delete</button>
+    <button class="btn btn-success" {% url "tweet_list" %}>Cancel</button>
+</form>
+
 {% endblock  %}
